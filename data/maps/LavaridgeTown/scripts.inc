@@ -65,6 +65,10 @@ LavaridgeTown_EventScript_MayGiveGoGoggles::
 	giveitem ITEM_GO_GOGGLES
 	setflag FLAG_RECEIVED_GO_GOGGLES
 	msgbox LavaridgeTown_Text_MayExplainGoGogglesChallengeDad, MSGBOX_DEFAULT
+	msgbox Rival_Text_GiveMegaRing, MSGBOX_DEFAULT
+	giveitem ITEM_MEGA_RING
+	setflag FLAG_RECEIVED_MEGA_RING
+	msgbox Rival_Text_ExplainMegaRing, MSGBOX_DEFAULT
 	goto LavaridgeTown_EventScript_RivalExit
 	end
 
@@ -407,3 +411,16 @@ LavaridgeTown_Text_HerbShopSign:
 	.string "POKéMON HERB SHOP\n"
 	.string "“Bitter taste--better cure!”$"
 
+Rival_Text_GiveMegaRing:
+	.string "Oh! I almost forgot.\n"
+    .string "My dad asked me to give you this.$"
+
+Rival_Text_ExplainMegaRing:
+	.string "This Ring will allow your Pokémon\n"
+    .string "to {COLOR RED}MEGA EVOLVE{COLOR DARK_GRAY} when equiped with\l"
+    .string "the right {COLOR RED}MEGA STONE{COLOR DARK_GRAY}.\p"
+    .string "I didn't find any yet so i can't\n"
+    .string "show you for now.\p"
+    .string "But we will find some eventually.\n"
+    .string "I'm sure of it.\p"
+    .string "See ya {PLAYER} !$"

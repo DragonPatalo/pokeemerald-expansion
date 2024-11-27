@@ -427,6 +427,7 @@ Route110_EventScript_MayBattleMudkip::
 
 Route110_EventScript_MayDefeated::
 	msgbox Route110_Text_MayTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_RIVAL_ROUTE_110
 	call Route110_EventScript_GiveItemfinder
 	msgbox Route110_Text_MayExplainItemfinder, MSGBOX_DEFAULT
 	goto Route110_EventScript_RivalExit
@@ -457,6 +458,7 @@ Route110_EventScript_BrendanBattleMudkip::
 
 Route110_EventScript_BrendanDefeated::
 	msgbox Route110_Text_BrendanTakeThis, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_RIVAL_ROUTE_110
 	call Route110_EventScript_GiveItemfinder
 	msgbox Route110_Text_BrendanExplainItemfinder, MSGBOX_DEFAULT
 	goto Route110_EventScript_RivalExit
@@ -480,6 +482,10 @@ Route110_EventScript_RivalExit::
 	call_if_eq VAR_0x8008, 2, Route110_EventScript_RivalExit2
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_RivalExit3
 	removeobject LOCALID_RIVAL_ON_BIKE
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox Lvlcap_Text_increased_to_31, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
 	setvar VAR_ROUTE110_STATE, 1
 	savebgm MUS_DUMMY
 	fadedefaultbgm
@@ -992,3 +998,5 @@ Route110_Text_KeepAnEyeOutForRival:
 	.string "Well, I had better get going.\n"
 	.string "See you again, {PLAYER}{KUN}!$"
 
+Lvlcap_Text_increased_to_31:
+	.string "Level CAP increased to 31 !$"

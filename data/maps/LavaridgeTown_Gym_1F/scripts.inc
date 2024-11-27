@@ -81,6 +81,10 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	delay 30
 	setflag FLAG_ENABLE_FLANNERY_MATCH_CALL
 	release
+	playfanfare MUS_REGISTER_MATCH_CALL
+    msgbox Lvlcap_Text_increased_to_45, MSGBOX_DEFAULT
+    waitfanfare
+    closemessage
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
@@ -402,3 +406,6 @@ LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons:
 	.string "that can battle?\p"
 	.string "I hate to say this, but when you come\n"
 	.string "see me, bring at least two POKéMON.$"
+
+Lvlcap_Text_increased_to_45:
+	.string "Level CAP increased to 45 !$"

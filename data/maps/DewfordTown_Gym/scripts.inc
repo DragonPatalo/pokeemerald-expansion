@@ -165,6 +165,10 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	setvar VAR_ROXANNE_CALL_STEP_COUNTER, 0
 	setflag FLAG_ENABLE_ROXANNE_FIRST_CALL
 	release
+	playfanfare MUS_REGISTER_MATCH_CALL
+    msgbox Lvlcap_Text_increased_to_27, MSGBOX_DEFAULT
+    waitfanfare
+    closemessage
 	end
 
 DewfordTown_Gym_EventScript_GiveBulkUp::
@@ -457,3 +461,6 @@ DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
 	.string "that can battle.\p"
 	.string "I'm sorry, but I'd like you to come back\n"
 	.string "with at least two POKéMON.$"
+
+Lvlcap_Text_increased_to_27:
+	.string "Level CAP increased to 27 !$"

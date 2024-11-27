@@ -9,15 +9,23 @@ u32 GetCurrentLevelCap(void)
 {
     static const u32 sLevelCapFlagMap[][2] =
     {
-        {FLAG_BADGE01_GET, 15},
-        {FLAG_BADGE02_GET, 19},
-        {FLAG_BADGE03_GET, 24},
-        {FLAG_BADGE04_GET, 29},
-        {FLAG_BADGE05_GET, 31},
-        {FLAG_BADGE06_GET, 33},
-        {FLAG_BADGE07_GET, 42},
-        {FLAG_BADGE08_GET, 46},
-        {FLAG_IS_CHAMPION, 58},
+        {FLAG_BADGE01_GET, 15},                                     // 0x7
+        {FLAG_DEFEATED_RIVAL_RUSTBORO, 17},                         // 0xD3
+        {FLAG_BADGE02_GET, 21},                                     // 0x8
+        {FLAG_DEFEATED_RIVAL_ROUTE_110, 27},                        // 0x4EF
+        {FLAG_BADGE03_GET, 31},                                     // 0x9
+        {FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, 35},                   // 0x8B
+        {FLAG_BADGE04_GET, 39},                                     // 0xA
+        {FLAG_BADGE05_GET, 45},                                     // 0xB
+        {FLAG_RECEIVED_HM_FLY, 50}, // Defeat Rival on Route 119    // 
+        {FLAG_BADGE06_GET, 54},                                     // 0xC
+        //RIVAL LILYCOVE  58                                          //
+        //MATT AQUA HIDEOUT 60                                        //
+        {FLAG_BADGE07_GET, 64},                                     // 0xD
+        //MAXIE/TABITHA SPACE CENTER 67                               //
+        //ARCHIE SEA FLR CAVERN 69                                    // 0xE
+        {FLAG_BADGE08_GET, 72},                                     //
+        {FLAG_IS_CHAMPION, 80},                                     //
     };
 
     u32 i;

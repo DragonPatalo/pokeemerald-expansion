@@ -109,6 +109,10 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	delay 30
 	setflag FLAG_ENABLE_WATTSON_MATCH_CALL
 	release
+	playfanfare MUS_REGISTER_MATCH_CALL
+    msgbox Lvlcap_Text_increased_to_35, MSGBOX_DEFAULT
+    waitfanfare
+    closemessage
 	end
 
 MauvilleCity_Gym_EventScript_GiveShockWave2::
@@ -419,3 +423,5 @@ MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
 	.string "Come see me with two or more\n"
 	.string "POKéMON, all right?$"
 
+Lvlcap_Text_increased_to_35:
+	.string "Level CAP increased to 35 !$"

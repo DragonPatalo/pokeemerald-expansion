@@ -31,6 +31,10 @@ RustboroCity_Gym_EventScript_GiveRockTomb::
 	setflag FLAG_RECEIVED_TM_ROCK_TOMB
 	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
 	release
+	playfanfare MUS_REGISTER_MATCH_CALL
+    msgbox Lvlcap_Text_increased_to_17, MSGBOX_DEFAULT
+    waitfanfare
+    closemessage
 	end
 
 RustboroCity_Gym_EventScript_RoxanneRematch::
@@ -281,3 +285,6 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 	.string "You only have one POKéMON with you?\p"
 	.string "Please return with at least one more\n"
 	.string "POKéMON.$"
+
+Lvlcap_Text_increased_to_17:
+	.string "Level CAP increased to 17 !$"

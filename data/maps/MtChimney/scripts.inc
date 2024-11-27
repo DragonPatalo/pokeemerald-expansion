@@ -78,6 +78,10 @@ MtChimney_EventScript_Maxie::
 	setflag FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO
 	clearflag FLAG_HIDE_MT_CHIMNEY_LAVA_COOKIE_LADY
 	releaseall
+	playfanfare MUS_REGISTER_MATCH_CALL
+    msgbox Lvlcap_Text_increased_to_39, MSGBOX_DEFAULT
+    waitfanfare
+    closemessage
 	end
 
 MtChimney_EventScript_ArchieApproachPlayerEast::
@@ -400,6 +404,7 @@ MtChimney_EventScript_BusyAquaGrunt3::
 
 MtChimney_EventScript_Tabitha::
 	trainerbattle_single TRAINER_TABITHA_MT_CHIMNEY, MtChimney_Text_TabithaIntro, MtChimney_Text_TabithaDefeat
+	setflag FLAG_DEFEATED_TABITHA_MT_CHIMNEY
 	msgbox MtChimney_Text_TabithaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -845,3 +850,5 @@ MtChimney_Text_SawyerPostRematch:
 	.string "Actually, it really is hot here.\n"
 	.string "I'm overdressed for these parts.$"
 
+Lvlcap_Text_increased_to_39:
+	.string "Level CAP increased to 39 !$"

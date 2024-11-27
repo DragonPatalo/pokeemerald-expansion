@@ -26,6 +26,10 @@ PetalburgCity_WallysHouse_EventScript_GiveHMSurf::
 	msgbox PetalburgCity_WallysHouse_Text_SurfGoAllSortsOfPlaces, MSGBOX_DEFAULT
 	setvar VAR_PETALBURG_CITY_STATE, 5
 	releaseall
+	playfanfare MUS_REGISTER_MATCH_CALL
+    msgbox Lvlcap_Text_increased_to_50, MSGBOX_DEFAULT
+    waitfanfare
+    closemessage
 	end
 
 PetalburgCity_WallysHouse_EventScript_WallysDad::
@@ -135,3 +139,5 @@ PetalburgCity_WallysHouse_Text_WallyLeftWithoutTelling:
 	.string "I'm sure that he'll come back safe\n"
 	.string "and sound one day!$"
 
+Lvlcap_Text_increased_to_50:
+	.string "Level CAP increased to 50 !$"

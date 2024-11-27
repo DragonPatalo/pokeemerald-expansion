@@ -160,9 +160,9 @@ static void (*const sPlayerBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler) =
     [CONTROLLER_RESETACTIONMOVESELECTION] = PlayerHandleResetActionMoveSelection,
     [CONTROLLER_ENDLINKBATTLE]            = PlayerHandleEndLinkBattle,
     [CONTROLLER_DEBUGMENU]                = PlayerHandleBattleDebug,
-    [CONTROLLER_TERMINATOR_NOP]           = BtlController_TerminatorNop
+    [CONTROLLER_TERMINATOR_NOP]           = PlayerCmdEnd //Pawkkie Edit Description
 };
-
+static EWRAM_DATA bool8 sDescriptionSubmenu = 0; //Pawkkie Edit Description
 void SetControllerToPlayer(u32 battler)
 {
     gBattlerControllerEndFuncs[battler] = PlayerBufferExecCompleted;

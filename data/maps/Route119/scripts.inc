@@ -158,11 +158,33 @@ Route119_EventScript_RivalExitScottArrive::
 	addvar VAR_SCOTT_STATE, 1
 	msgbox Route119_Text_ScottWayToGoBeSeeingYou, MSGBOX_DEFAULT
 	closemessage
+	call Route_119_EventScriptGiveMegaStone
+	msgbox Route119_Text_ScottBye, MSGBOX_DEFAULT
+	closemessage
 	call_if_eq VAR_TEMP_1, 1, Route119_EventScript_ScottExit1
 	call_if_eq VAR_TEMP_1, 2, Route119_EventScript_ScottExit2
 	removeobject LOCALID_SCOTT
 	releaseall
 	end
+
+Route_119_EventScriptGiveMegaStone::
+	switch VAR_STARTER_MON
+	case 0, EventScript_treecko
+	case 1, EventScript_torchic
+	case 2, EventScript_mudkip
+	return
+
+EventScript_treecko::
+	giveitem ITEM_SCEPTILITE
+	return
+
+EventScript_torchic::
+	giveitem ITEM_BLAZIKENITE
+	return
+
+EventScript_mudkip::
+	giveitem ITEM_SWAMPERTITE
+	return
 
 Route119_EventScript_SetScottPos1::
 	setobjectxyperm LOCALID_SCOTT, 27, 25
@@ -546,11 +568,24 @@ Route119_Text_ScottWayToGoBeSeeingYou:
 	.string "It was pretty obvious that you did.\p"
 	.string "The kid looked really upset with\n"
 	.string "a face all red from anger.\p"
-	.string "I sure seem to run into you often.\n"
-	.string "Are you off to FORTREE GYM next?\p"
-	.string "I expect that you'll do well at the GYM.\n"
-	.string "Well, I'll be seeing you!$"
+	.string "I sure seem to run into you often\n"
+    .string "huh? Oh? Is that... Is that what\l"
+    .string "I think it is? Hmm...\p"
+    .string "You're off to fight {COLOR GREEN}Winona{COLOR DARK_GRAY} next\n"
+    .string "right?\p"
+    .string "Did you get a chance to use your\l"
+    .string "{COLOR RED}MEGA RING{COLOR DARK_GRAY} yet? No?\p"
+    .string "All right then it's settled.\l"
+    .string "I will lend a {COLOR RED}MEGA STONE{COLOR DARK_GRAY} to you.\p"
+    .string "Prove me that you are worthy\n"
+    .string "of it and i might even let you\l"
+    .string "keep it. Use it well !$"
 
+Route119_Text_ScottBye:
+	.string "SCOTT: Well {PLAYER}, I better\n"
+    .string "get going. I wish you good luck\l"
+    .string "against WINONA.\p"
+    .string "See you next time !$"
 
 Route119_Text_ScottYouWonAtFortreeGym:
 	.string "… … … … … …\n"
@@ -561,6 +596,10 @@ Route119_Text_ScottYouWonAtFortreeGym:
 	.string "Your strength…\n"
 	.string "Perhaps you really are the TRAINER\l"
 	.string "that I've been searching for.\p"
+	.string "That reminds me, remember that\l"
+    .string "MEGA STONE i lent you? Keep it.\p"
+    .string "Consider it a congratulations gift\l"
+    .string "for beating Winona. You deserve it\p"
 	.string "Remember, you have a fan in me.\n"
 	.string "I'll be cheering from the sidelines.\l"
 	.string "Keep up the great work!\p"
