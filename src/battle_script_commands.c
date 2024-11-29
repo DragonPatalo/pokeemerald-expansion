@@ -7653,14 +7653,7 @@ static void Cmd_yesnoboxlearnmove(void)
             else
             {
                 u16 moveId = GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_MOVE1 + movePosition);
-                if (IsMoveHM(moveId))
-                {
-                    PrepareStringBattle(STRINGID_HMMOVESCANTBEFORGOTTEN, B_POSITION_PLAYER_LEFT);
-                    gBattleScripting.learnMoveState = 6;
-                }
-                else
-                {
-                    gBattlescriptCurrInstr = cmd->forgotMovePtr;
+                {gBattlescriptCurrInstr = cmd->forgotMovePtr;
 
                     PREPARE_MOVE_BUFFER(gBattleTextBuff2, moveId)
 
